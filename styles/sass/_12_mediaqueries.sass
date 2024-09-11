@@ -1,0 +1,37 @@
+// A map of breakpoints.
+$breakpoint_XS: 576px
+$breakpoint_SM: 768px
+$breakpoint_MD: 992px
+$breakpoint_LG: 1200px
+
+@media (min-width: $breakpoint_SM)
+    .navbar-dark 
+        .navbar-nav 
+            .nav-link
+                padding: 0.7rem 1.2rem
+                border-radius: 1.5rem
+            .nav-link::after
+                /* --- 1g. quitar flechas navbar en MD LG --- */   
+                content: ""
+    /* --- corregimos el tamaño del skew de te ayudamos en SM --- */   
+    #te_ayudamos
+        transform: skewY(3deg)
+        .container
+            transform: skewY(-3deg)
+
+    .columna_inclinada::before
+        left: -300%
+        right: 0
+        transform: skewX(23deg)
+
+@media (min-width: $breakpoint_MD)
+    html
+        font-size: 14px
+    .swiper-slide
+        /*--600px--*/
+        height: 37.5rem 
+    
+@media (min-width: $breakpoint_LG)
+    .swiper-slide
+        /*--700px--*/
+        height: 44rem 

@@ -1,0 +1,379 @@
+@charset "UTF-8";
+/* ----- ----- ----- ----- 1. GENERALES          ----- ---------- ----- */
+/* --- 1a. Patrones de colores --- */
+/* --- 1b. Tipográfia --- */
+html {
+  font-size: 13px; }
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #696969; }
+
+/* --- 1c. Estilos generales de botones --- */
+.btn {
+  border-radius: 2rem;
+  padding: 0.6rem 2rem;
+  font-weight: bold; }
+
+/* --- 1d. Estilos color principal --- */
+.bg-primary {
+  background-color: #00CED1 !important; }
+
+.text-primary {
+  color: #00CED1 !important; }
+
+/* --- 1e. Estilos .btn-primary  --- */
+.btn-primary {
+  color: #fff;
+  background-color: #00CED1;
+  border-color: #00CED1;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.5s ease; }
+
+.btn-primary:hover {
+  color: #35363c;
+  background-color: #fff;
+  border-color: #00CED1; }
+
+.btn-primary:active {
+  color: #35363c !important;
+  background-color: #00e7eb !important;
+  border-color: #00f6fa !important; }
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 206, 209, 0.5) !important;
+  color: #35363c !important; }
+
+/* --- 1f. Agregar animación de caja blanca con :before --- */
+.btn-primary::before {
+  content: "";
+  z-index: -1;
+  width: 0px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: skew(45deg, 0deg);
+  transition: all 0.4s ease-out; }
+
+.btn-primary:hover::before, .btn-primary:focus::before, .btn-primary:active::before {
+  width: 120%;
+  left: -15%; }
+
+/* --- 1g. Agregar flecha al botón con :after --- */
+.btn-primary::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  position: relative;
+  left: 0.7rem;
+  top: 0.1rem;
+  transition: left 0.3s ease; }
+
+.btn-primary:hover::after, .btn-primary:focus:after, .btn-primary:active::after {
+  left: 0.3rem; }
+
+/* --- 1h. Estilos color secundario --- */
+.bg-secondary {
+  background-color: #35363c !important; }
+
+.text-secondary {
+  color: #35363c !important; }
+
+/* ----- ----- ----- ----- 2. HEADER            ----- ----- ----- ----- */
+/* --- 2a. Estilos para ".redes-sociales" --- */
+.redes-sociales li i {
+  color: #ffffff;
+  font-size: 1.25rem;
+  padding: 0.6rem 1rem;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out; }
+.redes-sociales li i:hover {
+  opacity: 1;
+  transform: scale(1.4) rotate(360deg); }
+
+/* ----- ----- ----- ----- 3. NAV               ----- ----- ----- ----- */
+/* --- 3a. Estilos para botón menú teléfonos por defecto --- */
+#menu-navegacion .navbar-toggler {
+  padding: 0px;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  outline: 0; }
+
+/* --- 3b. Estilos para boton del menu personalizado --- */
+#menu-navegacion .boton-menu::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 900;
+  font-size: 2rem;
+  color: #fff; }
+#menu-navegacion .icono-cerrar::before {
+  content: ""; }
+
+/* --- 3c. Estilos para los enlaces del menu de navegación --- */
+.navbar-dark .navbar-nav .nav-link {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease; }
+.navbar-dark .navbar-nav .nav-link::after {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 900; }
+.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: #4d4e57; }
+.navbar-dark .navbar-nav .nav-link:hover::after {
+  transform: rotateZ(180deg);
+  transition: all 0.2s ease; }
+.navbar-dark .navbar-nav .nav-link.active {
+  /* --- 4c. Estilos para los enlaces ACTIVOS del menu de navegación --- */
+  background-color: #00CED1; }
+
+/* --- 3d. Estilos menu fijo de navegación --- */
+.Menu_fijo {
+  background-color: #1d1e21 !important;
+  transition: all 0.5s ease;
+  width: 100% !important; }
+
+/* ----- ----- ----- ----- 4. SWIPER            ----- ----- ----- ----- */
+/* --- 4a. Estilos para la animacion --- */
+.swiper-slide {
+  height: 34.5rem;
+  text-align: center;
+  color: #ffffff;
+  background-size: cover;
+  background-position: center center; }
+
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  background: #000000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.4; }
+
+.swiper-button-prev, .swiper-button-next {
+  background-image: none;
+  background-color: rgba(0, 0, 0, 0.35);
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%; }
+
+.swiper-button-prev::before, .swiper-button-next::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: ""; }
+
+.swiper-button-next::before {
+  content: ""; }
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.55);
+  transition: all 0.5s ease;
+  color: #00CED1; }
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  margin: 0px 0.4rem !important; }
+
+.swiper-pagination-bullet-active {
+  background-color: #00CED1; }
+
+/* ----- ----- ----- ----- 5. VIDEO PROMOCIONAL ----- ----- ----- ----- */
+/* --- 5a. Estilos icono play e imágen video promocional --- */
+.contenedor-video {
+  overflow: hidden; }
+  .contenedor-video a {
+    background-color: rgba(255, 255, 255, 0.79);
+    color: #00CED1;
+    width: 7rem;
+    height: 7rem;
+    font-size: 2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.35s ease;
+    background-clip: padding-box;
+    border: 0px solid transparent; }
+  .contenedor-video a:hover {
+    background-color: #00CED1;
+    color: #ffffff;
+    border: 10px solid rgba(255, 255, 255, 0.5); }
+  .contenedor-video img {
+    transition: all 1s ease; }
+
+.contenedor-video:hover img {
+  transform: scale(1.1); }
+
+/* ----- ----- ----- ----- 6. TE AYUDAMOS       ----- ----- ----- ----- */
+/* --- 6a. Estilos sección te ayudamos --- */
+#te_ayudamos {
+  position: relative;
+  transform: skewY(6deg); }
+  #te_ayudamos .container {
+    transform: skewY(-6deg); }
+
+#te_ayudamos::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.52);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }
+
+/* ----- ----- ----- ----- 7. PREMIOS           ----- ----- ----- ----- */
+/* --- 7a. Estilos sección premios --- */
+#premios .col-6 i {
+  transition: all 0.2s ease-in-out; }
+#premios .col-6 .linea-animada {
+  background-color: #00CED1;
+  width: 4rem;
+  height: 0.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.2s ease-in-out; }
+#premios .col-6:hover i {
+  color: #35363c !important;
+  transform: scale(1.2); }
+#premios .col-6:hover .linea-animada {
+  background-color: #35363c;
+  width: 5.5rem;
+  height: 0.45rem;
+  bottom: 0.8rem; }
+
+/* ----- ----- ----- ----- 8. NUESTRA APP       ----- ----- ----- ----- */
+/* --- 8a. Estilos sección premios --- */
+#nuestra_app::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; }
+
+/* ----- ----- ----- ----- 9. CONTACTO          ----- ----- ----- ----- */
+/* --- 9a. Estilos sección contacto --- */
+#contacto header .forma_triangular {
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  background: #00CED1;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 50%) rotate(45deg); }
+#contacto #formulario .mouse_pointer {
+  cursor: pointer; }
+#contacto #formulario .date_append_icon {
+  margin: 0;
+  cursor: pointer; }
+#contacto #formulario .picker__box {
+  border: solid 5px #00CED1;
+  border-radius: 2%; }
+#contacto #formulario .picker--focused .picker__day--selected,
+#contacto #formulario .picker__day--selected,
+#contacto #formulario .picker__day--selected:hover {
+  background: #00CED1;
+  color: #fff; }
+#contacto #formulario .picker__day--highlighted {
+  border-color: #009c9e; }
+#contacto #formulario .picker__day--today::before {
+  border-top: 0.5em solid #fff; }
+#contacto #formulario .picker__select--month, #contacto #formulario .picker__select--year {
+  margin-top: -0.5em;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem; }
+#contacto #formulario .picker--focused .picker__list-item--highlighted,
+#contacto #formulario .picker__list-item--highlighted:hover,
+#contacto #formulario .picker__list-item:hover {
+  background: #00CED1; }
+#contacto #formulario .picker__list-item--highlighted,
+#contacto #formulario .picker__list-item:hover {
+  border-color: #009c9e; }
+#contacto #formulario .picker__list {
+  padding: 0.5rem 0rem; }
+
+/* ----- ----- ----- ----- 10. CONTACTO          ----- ----- ----- ----- */
+/* --- 10a. columnq inclinada footer --- */
+.columna_inclinada::before {
+  content: "";
+  position: absolute;
+  background: #00CED1;
+  top: 0;
+  bottom: 0;
+  left: -300%;
+  right: -300%; }
+
+/* --- 10b. enlaces footer --- */
+.enlaces_footer {
+  border-bottom: 1px solid #5d666f;
+  box-shadow: 0px 1px #212529; }
+  .enlaces_footer a {
+    display: block;
+    padding: 1rem;
+    color: #fff;
+    text-decoration: none; }
+
+/* ----- ----- ----- ----- 11. SOPORTE IE11      ----- ----- ----- ----- */
+/*11a. Estilos para IE11 */
+.ie11 #bienvenidos .contenedor-video img {
+  width: 100%; }
+.ie11 .navbar-dark .navbar-nav .nav-link::after {
+  display: block; }
+
+/* ----- ----- ----- ----- 12. MEDIA QUERIES     ----- ----- ----- ----- */
+@media (min-width: 768px) {
+  .navbar-dark .navbar-nav .nav-link {
+    padding: 0.7rem 1.2rem;
+    border-radius: 1.5rem; }
+  .navbar-dark .navbar-nav .nav-link::after {
+    /* --- 1g. quitar flechas navbar en MD LG --- */
+    content: ""; }
+
+  /* --- corregimos el tamaño del skew de te ayudamos en SM --- */
+  #te_ayudamos {
+    transform: skewY(3deg); }
+    #te_ayudamos .container {
+      transform: skewY(-3deg); }
+
+  .columna_inclinada::before {
+    left: -300%;
+    right: 0;
+    transform: skewX(23deg); } }
+@media (min-width: 992px) {
+  html {
+    font-size: 14px; }
+
+  .swiper-slide {
+    /*--600px-- */
+    height: 37.5rem; } }
+@media (min-width: 1200px) {
+  .swiper-slide {
+    /*--700px-- */
+    height: 44rem; } }
+/* ----- ----- ----- ----- guia para ver las columnas    ----- ----- ----- ----- */
+
+/*# sourceMappingURL=styles.css.map */

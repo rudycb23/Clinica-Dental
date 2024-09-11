@@ -1,0 +1,55 @@
+/* --- 3a. Estilos para botón menú teléfonos por defecto --- */
+#menu-navegacion 
+    .navbar-toggler
+        padding: 0px
+        font-size: 1rem
+        line-height: 1
+        background-color: transparent
+        border: none
+        border-radius: 0
+        outline: 0
+
+/* --- 3b. Estilos para boton del menu personalizado --- */
+#menu-navegacion 
+    .boton-menu::before
+        font-family: 'Font Awesome 5 Free'
+        content: "\f0c9"
+        font-weight: 900
+        font-size: 2rem
+        color: #fff
+    .icono-cerrar::before
+        content: "\f057"
+
+/* --- 3c. Estilos para los enlaces del menu de navegación --- */
+.navbar-dark 
+    .navbar-nav 
+        .nav-link
+            padding: 1rem 1.5rem
+            display: flex
+            justify-content: space-between
+            border-radius: 0.5rem
+            transition: all 0.3s ease
+
+        .nav-link::after
+            font-family: 'Font Awesome 5 Free'
+            content: "\f054"
+            font-weight: 900
+
+        .nav-link:hover
+            background-color: lighten($color_secundario, 10%)
+
+        .nav-link:hover::after
+            transform: rotateZ(180deg)
+            transition: all 0.2s ease
+        .nav-link.active
+            /* --- 4c. Estilos para los enlaces ACTIVOS del menu de navegación --- */
+            background-color: $color_principal
+
+/* --- 3d. Estilos menu fijo de navegación --- */      
+.Menu_fijo
+        background-color: darken($color_secundario,10%) !important
+        transition: all 0.5s ease
+        width: 100% !important
+
+
+                         

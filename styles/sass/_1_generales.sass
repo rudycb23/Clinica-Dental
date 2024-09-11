@@ -1,0 +1,87 @@
+/* --- 1a. Patrones de colores --- */
+$color_principal: #00CED1
+$color_secundario: #35363c
+$texto: #696969
+
+/* --- 1b. Tipográfia --- */
+html
+    font-size: 13px
+body
+    font-family: 'Lato', sans-serif
+    color: $texto
+
+/* --- 1c. Estilos generales de botones --- */
+.btn
+    border-radius: 2rem
+    padding: 0.6rem 2rem
+    font-weight: bold
+
+    
+/* --- 1d. Estilos color principal --- */
+
+.bg-primary
+    background-color: $color_principal !important
+.text-primary
+    color: $color_principal !important
+
+/* --- 1e. Estilos .btn-primary  --- */
+.btn-primary
+    color: #fff
+    background-color: $color_principal
+    border-color: $color_principal
+    position: relative
+    overflow: hidden
+    z-index: 1
+    transition: all 0.5s ease
+
+.btn-primary:hover
+    color: $color_secundario
+    background-color: #fff
+    border-color: $color_principal
+
+.btn-primary:active
+    color: $color_secundario !important
+    background-color: lighten($color_principal, 5%) !important
+    border-color: lighten($color_principal, 8%) !important
+
+.btn-primary:focus 
+    box-shadow: 0 0 0 .2rem rgba($color_principal, 0.5) !important
+    color: $color_secundario !important
+
+/* --- 1f. Agregar animación de caja blanca con :before --- */
+.btn-primary::before
+    content: ""
+    z-index: -1
+    width: 0px
+    height: 100%
+    background: #fff
+    position: absolute
+    left: 50%
+    top: 0
+    transform: skew(45deg,0deg)
+    transition: all 0.4s ease-out
+
+.btn-primary:hover::before, .btn-primary:focus::before, .btn-primary:active::before,
+    width: 120%
+    left: -15%
+    
+/* --- 1g. Agregar flecha al botón con :after --- */
+.btn-primary::after 
+    font-family: 'Font Awesome 5 Free'
+    font-weight: 900
+    content: '\f138'
+    position: relative
+    left: 0.7rem
+    top: 0.1rem
+    transition: left 0.3s ease
+
+.btn-primary:hover::after, .btn-primary:focus:after, .btn-primary:active::after 
+    left: 0.3rem
+    
+/* --- 1h. Estilos color secundario --- */
+.bg-secondary
+    background-color: $color_secundario !important
+.text-secondary
+    color: $color_secundario !important
+
+
